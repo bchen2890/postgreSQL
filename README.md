@@ -1,5 +1,5 @@
 # postgreSQL
-Learning PostgreSQL
+Learning SQL with PostgreSQL
 
 ## Windows 11 Set Up
 
@@ -25,7 +25,7 @@ $ psql -U postgres -d postgres
 $ \i \pathto\file.sql
 ```
 
-###List all tables
+### List all tables
 ```
 $ \dt
 ```
