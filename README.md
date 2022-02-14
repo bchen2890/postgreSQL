@@ -22,7 +22,7 @@ $ psql -U postgres -d postgres
 
 ### Run a SQL file
 ```
-$ \i \pathto\file.sql
+$ \i /pathto/file.sql
 ```
 
 ###List all tables
