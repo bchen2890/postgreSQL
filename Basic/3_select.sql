@@ -1,5 +1,6 @@
 --Select all columns from table
 SELECT * FROM accounts;
+SELECT * FROM roles;
 
 --Select usernames from table
 SELECT username FROM accounts;
