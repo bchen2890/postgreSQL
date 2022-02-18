@@ -1,6 +1,6 @@
 --IF EXISTS avoid the error when you want to delete a non-exist table 
-DROP TABLE IF EXISTS accounts;
 DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS accounts;
 
 CREATE TABLE accounts (
 --SERIAL allows you to automatically generate unique integer numbers 
