@@ -12,9 +12,19 @@ VALUES ('user2', 'u123', '2022-2-13 12:24:02', 'user2@gmail.com') RETURNING *;
 INSERT INTO accounts (username, password, created_on, birth_date)
 VALUES ('user3', 'u123', '2022-2-14 12:24:02', '2000-01-01') RETURNING *;
 
+INSERT INTO accounts (username, password, created_on, first_name, last_name)
+VALUES ('user4', 'u123', '2022-2-14 12:24:02', 'Aurora', 'Ruiz') RETURNING *;
+
 INSERT INTO roles (role_name, manager)
 VALUES ('sales manager', 1) RETURNING *;
 
+--Insert multiple rows
+INSERT INTO accounts (username, password, created_on, first_name, last_name)
+VALUES 
+	('user5', 'u123', '2022-2-14 12:24:02', 'John', 'Smith'),
+	('user6', 'u123', '2022-2-14 12:24:02', 'Olivia', 'Smith')
+ RETURNING *;
+ 
 /*
 --ERROR: username not UNIQUE 
 INSERT INTO accounts (username, password, created_on)

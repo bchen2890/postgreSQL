@@ -13,7 +13,9 @@ CREATE TABLE accounts (
 	created_on TIMESTAMP NOT NULL,
 	email VARCHAR ( 50 ),
 --CHECK allows you to specify if values in a column must satisfy a specific requirement
-	birth_date DATE CHECK (birth_date > '1900-01-01')
+	birth_date DATE CHECK (birth_date > '1900-01-01'),
+	first_name VARCHAR ( 50 ),
+	last_name VARCHAR ( 50 )
 );
 
 CREATE TABLE roles(
