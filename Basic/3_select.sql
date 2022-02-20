@@ -79,6 +79,19 @@ SELECT username FROM accounts ORDER BY username LIMIT 3;
 --OFFSET skips a number of rows before LIMIT is applied
 SELECT username FROM accounts ORDER BY username LIMIT 3 OFFSET 2;
 
+--FETCH is functionally equivalent to LIMIT
+SELECT username FROM accounts ORDER BY username FETCH FIRST 2 ROWS ONLY;
+SELECT username FROM accounts ORDER BY username OFFSET 2 FETCH FIRST 2 ROWS ONLY;
+SELECT username FROM accounts ORDER BY username OFFSET 2 FETCH NEXT 2 ROWS ONLY;
+
+--GROUP BY divides the returned rows into groups
+SELECT password, COUNT(password) FROM accounts GROUP BY password;
+SELECT password, COUNT(password) numPass FROM accounts GROUP BY password ORDER BY numPass;
+SELECT DATE(created_on), COUNT(created_on) FROM accounts GROUP BY DATE(created_on);
+
+--HAVING clause specifies a condition to filter groups
+SELECT password, COUNT(password) FROM accounts GROUP BY password HAVING COUNT(password) > 2;
+
 
 
 

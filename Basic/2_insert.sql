@@ -23,7 +23,7 @@ VALUES ('sales manager', 1) RETURNING *;
 --Insert multiple rows
 INSERT INTO accounts (username, password, created_on, email, first_name, last_name)
 VALUES 
-	('user5', 'u123', '2022-2-14 12:24:02', 'user5@gmail.com', 'John', 'Smith'),
+	('user5', 'u123', '2022-2-14 12:24:01', 'user5@gmail.com', 'John', 'Smith'),
 	('user6', 'u123', '2022-2-14 12:24:02', 'user6@gmail.com', 'Olivia', 'Smith')
  RETURNING *;
 
