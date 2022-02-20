@@ -1,6 +1,8 @@
 --RETURNING returns information of the inserted row
 INSERT INTO accounts (username, password, created_on)
 VALUES ('bchen', 'pass', '2022-2-13') RETURNING *;
+INSERT INTO accounts (username, password, created_on)
+VALUES ('mchen', 'pass', '2022-2-13') RETURNING *;
 
 INSERT INTO accounts (username, password, created_on)
 VALUES ('user1', 'u123', '2022-2-13 12:24:02') RETURNING created_on;
@@ -13,7 +15,7 @@ INSERT INTO accounts (username, password, created_on, birth_date)
 VALUES ('user3', 'u123', '2022-2-14 12:24:02', '2000-01-01') RETURNING *;
 
 INSERT INTO accounts (username, password, created_on, email, first_name, last_name)
-VALUES ('user4', 'u123', '2022-2-14 12:24:02', 'user5@gmail.com', 'Aurora', 'Ruiz') RETURNING *;
+VALUES ('user4', 'u123', '2022-2-14 12:24:02', 'user4@gmail.com', 'Aurora', 'Ruiz') RETURNING *;
 
 INSERT INTO roles (role_name, manager)
 VALUES ('sales manager', 1) RETURNING *;
@@ -24,7 +26,9 @@ VALUES
 	('user5', 'u123', '2022-2-14 12:24:02', 'user5@gmail.com', 'John', 'Smith'),
 	('user6', 'u123', '2022-2-14 12:24:02', 'user6@gmail.com', 'Olivia', 'Smith')
  RETURNING *;
- 
+
+INSERT INTO accounts (username, password, created_on, email, first_name, last_name, birth_date)
+VALUES ('user11', 'u543', '2022-2-15 12:24:02', 'user7@gmail.com', 'Harry', 'Williams', '1999-08-07') RETURNING *;
 /*
 --ERROR: username not UNIQUE 
 INSERT INTO accounts (username, password, created_on)
