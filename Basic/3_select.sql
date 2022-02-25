@@ -89,8 +89,17 @@ SELECT password, COUNT(password) FROM accounts GROUP BY password;
 SELECT password, COUNT(password) numPass FROM accounts GROUP BY password ORDER BY numPass;
 SELECT DATE(created_on), COUNT(created_on) FROM accounts GROUP BY DATE(created_on);
 
+--GROUPING SETS allows you to define multiple grouping sets in the same query.
+SELECT username, password, COUNT(created_on) FROM accounts GROUP BY GROUPING SETS ((username,password),(username),(password),());
+--CUBE allows you to generates all possible grouping sets based on the dimension columns (2^n combinations)
+SELECT username, password, COUNT(created_on) FROM accounts GROUP BY CUBE (username,password);--Equivalent to above query
+--ROLLUP hierarchically applies the aggregate function
+--	Equivalent to GROUPING SETS ((username,password),(username),())
+SELECT username, password, COUNT(created_on) FROM accounts GROUP BY ROLLUP (username,password);
+
 --HAVING clause specifies a condition to filter groups
 SELECT password, COUNT(password) FROM accounts GROUP BY password HAVING COUNT(password) > 2;
+
 
 
 
