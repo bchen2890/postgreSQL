@@ -42,3 +42,22 @@ SELECT * FROM popular_products INTERSECT SELECT * FROM top_products;
 --EXCEPT return the rows in the first query that does not appear in the output of the second query.
 SELECT * FROM popular_products EXCEPT SELECT * FROM top_products;
 SELECT * FROM top_products EXCEPT SELECT * FROM popular_products;
+
+--A subquery is a query nested inside another query
+SELECT * FROM popular_products WHERE prod_id IN (SELECT prod_id FROM top_products);
+--EXISTS tests for existence of rows in a subquery
+SELECT * FROM popular_products p WHERE EXISTS (SELECT prod_id FROM top_products WHERE prod_id=p.prod_id);
+SELECT * FROM popular_products p WHERE NOT EXISTS (SELECT prod_id FROM top_products WHERE prod_id=p.prod_id);
+--ANY compares a value to a set of values returned by a subquery
+SELECT * FROM top_products WHERE LENGTH(name) > ANY (SELECT MAX(LENGTH(name)) FROM popular_products);
+--= ANY is equivalent to IN
+SELECT * FROM popular_products WHERE prod_id = ANY (SELECT prod_id FROM top_products);
+--ALL query data by comparing a value with a list of values returned by a subquery
+SELECT * FROM top_products WHERE LENGTH(name) > ALL (SELECT LENGTH(name) FROM popular_products);
+
+
+
+
+
+
+
