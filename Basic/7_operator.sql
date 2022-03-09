@@ -55,6 +55,16 @@ SELECT * FROM popular_products WHERE prod_id = ANY (SELECT prod_id FROM top_prod
 --ALL query data by comparing a value with a list of values returned by a subquery
 SELECT * FROM top_products WHERE LENGTH(name) > ALL (SELECT LENGTH(name) FROM popular_products);
 
+--A common table expression(CTE) is a temporary result set which you can reference within another SQL
+WITH cte_products AS (
+	SELECT * FROM top_products p WHERE prod_id > 5
+)
+SELECT name, LENGTH(name) FROM cte_products;
+WITH cte_products AS (
+	SELECT * FROM top_products p WHERE prod_id < 5
+)
+SELECT * FROM popular_products INNER JOIN cte_products USING(prod_id);
+
 
 
 
