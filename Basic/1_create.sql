@@ -25,3 +25,71 @@ CREATE TABLE roles(
    FOREIGN KEY (manager)
 		REFERENCES accounts(user_id)
 );
+
+CREATE TABLE typesExamples(
+-- Boolean Type
+	isEmployee BOOLEAN,
+	
+-- Array Type
+	team_members TEXT[],
+
+-- JSON Type
+	info JSON,
+
+-- UUID Type
+	id UUID,
+	
+----- Character Types -----
+--fixed-length character with space padded
+	motherTongue CHAR(2),
+--variable-length character without space padded
+	name VARCHAR(50),
+--variable-length character with unlimited length
+	description TEXT,
+	
+----- Integer Types -----
+--integer numbers in the range of (-32767, 32767). 2B storage size.
+	numpage SMALLINT,
+--integer numbers in the range of (-2147483648, +2147483647). 4B storage size.
+	population INT,
+--integer numbers in the range of (-9223372036854775808,+9223372036854775807). 8B storage size.
+	capital BIGINT,
+--autoincrementing smallint
+	idNumPage SERIAL,
+--autoincrementing int
+	idOrder SMALLSERIAL,
+--autoincrementing bigint,
+	idProduct BIGSERIAL,
+	
+----- Floating-point numbers Types -----
+--floating-point number with precision n
+	prob float(4)
+--real 4-byte floating-point number
+	price real,
+--real number with p digits with s number after the decimal point. 
+	calc numeric (4, 6)
+
+----- Temporal data Types -----
+--date only
+	publication_date DATE,
+--the time of day values
+	start_time TIME,
+--date and time values
+	created_on TIMESTAMP,
+--timestamp with a timezone
+	local_time TIMESTAMPTZ,
+
+----- Geometric Types -----
+--a geometric pair of numbers (x,y)
+	piece_x POINT,
+--infinite line represented by linear equation { A, B, C } or two points ( x1 , y1 ) , ( x2 , y2 )
+	equation LINE,
+--a line segment represented by pairs of points ( x1 , y1 ) , ( x2 , y2 )
+	line_drawn LSEG,
+--a rectangular box represented by pairs of points that are opposite corners
+	rectangle BOX,
+-- a polygon represented by lists of points (the vertexes of the polygon) ( x1 , y1 ) , ... , ( xn , yn )
+	figure POLYGON,
+-- a circle represented by a center point (x,y) and radius r
+	bubble CIRCLE
+);
