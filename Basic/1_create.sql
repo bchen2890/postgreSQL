@@ -63,11 +63,11 @@ CREATE TABLE typesExamples(
 	
 ----- Floating-point numbers Types -----
 --floating-point number with precision n
-	prob float(4)
+	prob float(4),
 --real 4-byte floating-point number
 	price real,
 --real number with p digits with s number after the decimal point. 
-	calc numeric (4, 6)
+	calc numeric (4,4),
 
 ----- Temporal data Types -----
 --date only
