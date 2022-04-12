@@ -1,3 +1,5 @@
+\i 2_insert.sql
+
 --Replace existing password
 UPDATE accounts SET password = 'password' WHERE username = 'bchen' RETURNING *;
 UPDATE accounts SET email = 'user22@gmail.com' WHERE username = 'user22' RETURNING *;

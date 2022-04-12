@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS orders2;
 DROP TABLE IF EXISTS orders3;
-
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE products (
@@ -105,3 +104,6 @@ VALUES
 	
 SELECT * FROM orders3 NATURAL JOIN products; --Values in both prod_id are matching 
 
+--CREATE TABLE AS create a new table from the result set of a query.
+CREATE TABLE sold_product AS SELECT order_id, orders.prod_id, name FROM orders INNER JOIN products ON products.prod_id = orders.prod_id;
+SELECT * FROM sold_product;

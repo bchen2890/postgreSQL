@@ -1,6 +1,7 @@
 --IF EXISTS avoid the error when you want to delete a non-exist table 
 DROP TABLE IF EXISTS roles;
 DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS type_examples;
 
 CREATE TABLE accounts (
 --SERIAL allows you to automatically generate unique integer numbers 
@@ -26,9 +27,9 @@ CREATE TABLE roles(
 		REFERENCES accounts(user_id)
 );
 
-CREATE TABLE typesExamples(
+CREATE TABLE type_examples(
 -- Boolean Type
-	isEmployee BOOLEAN,
+	is_employee BOOLEAN,
 	
 -- Array Type
 	team_members TEXT[],
@@ -41,7 +42,7 @@ CREATE TABLE typesExamples(
 	
 ----- Character Types -----
 --fixed-length character with space padded
-	motherTongue CHAR(2),
+	mother_tongue CHAR(2),
 --variable-length character without space padded
 	name VARCHAR(50),
 --variable-length character with unlimited length
@@ -55,11 +56,11 @@ CREATE TABLE typesExamples(
 --integer numbers in the range of (-9223372036854775808,+9223372036854775807). 8B storage size.
 	capital BIGINT,
 --autoincrementing smallint
-	idNumPage SERIAL,
+	numPage_id SERIAL,
 --autoincrementing int
-	idOrder SMALLSERIAL,
+	order_id SMALLSERIAL,
 --autoincrementing bigint,
-	idProduct BIGSERIAL,
+	product_id BIGSERIAL,
 	
 ----- Floating-point numbers Types -----
 --floating-point number with precision n

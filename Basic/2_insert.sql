@@ -1,3 +1,4 @@
+\i 1_create.sql
 --RETURNING returns information of the inserted row
 INSERT INTO accounts (username, password, created_on)
 VALUES ('bchen', 'pass', '2022-2-13') RETURNING *;

@@ -1,3 +1,4 @@
+\i 2_insert.sql
 --Select all columns from table
 SELECT * FROM accounts;
 SELECT * FROM roles;
