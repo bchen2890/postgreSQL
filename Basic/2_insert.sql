@@ -19,7 +19,8 @@ INSERT INTO accounts (username, password, created_on, email, first_name, last_na
 VALUES ('user4', 'u123', '2022-2-14 12:24:02', 'user4@gmail.com', 'Aurora', 'Ruiz') RETURNING *;
 
 INSERT INTO roles (role_name, manager)
-VALUES ('sales manager', 1) RETURNING *;
+VALUES ('sales manager', 1), ('IT manager', 2)
+RETURNING *;
 
 --Insert multiple rows
 INSERT INTO accounts (username, password, created_on, email, first_name, last_name)
