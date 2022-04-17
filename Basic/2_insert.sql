@@ -18,6 +18,9 @@ VALUES ('user3', 'u123', '2022-2-14 12:24:02', '2000-01-01') RETURNING *;
 INSERT INTO accounts (username, password, created_on, email, first_name, last_name)
 VALUES ('user4', 'u123', '2022-2-14 12:24:02', 'user4@gmail.com', 'Aurora', 'Ruiz') RETURNING *;
 
+INSERT INTO accounts (username, password, created_on, email, birth_date)
+VALUES ('user10', 'user10', '2022-4-14 11:24:02', 'user19@gmail.com', '2010-03-02') RETURNING *;
+
 INSERT INTO roles (role_name, manager)
 VALUES ('sales manager', 1), ('IT manager', 2)
 RETURNING *;
